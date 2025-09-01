@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins%3Awght%40100%3B200%3B300%3B400%3B500%3B600&display=swap%27%29%3B');
+
+*{ /*These settings will be applied to ALL elements in the website. Every text, images etc.*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html{ /*Applying styles directly to entire page of the HTML document*/
+    font-size: 60%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: white;
+}
+
+header{
+    background-color: #19663b;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.1rem 5%;
+    /* filter: drop-shadow(10px); */
+    justify-content: space-between;
+    z-index: 100;
+}
+
+
+.logo{
+    display: flexbox;
+    padding: 5rem;
+    flex: 50%;
+    font-size: 3rem;
+    color: white;
+    font-weight: 800;
+    cursor: pointer; /*to indicate that an element is interactive and can be clicked. When a user hovers over an element with this property applied, the mouse cursor will change to a hand icon*/
+    transition: 0.5s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1); /*self explanatory. hover, logo scales; bigger/smaller*/
+}
+
+
+nav a{ 
+    display: flexbox;
+    justify-content: space-between;
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 3rem; 
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover, nav a.active{
+    transform: scale(1.1);
+    color: #80ffb9;
+    border-bottom: 1px solid #80ffb9;
+}
+
+
+section{
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+.home{ /*class; mods for home class*/
+    grid-area: content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: rgb(16, 43, 28);
+}
+
+span{
+    color: #80ffb9;
+}
+
+.wrapper .butn{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 2.8rem;
+    background-color: black;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #80ffb9;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #80ffb9;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.wrapper .butn:hover{
+    transform: scale3d(1.03);
+    background-color: #80ffb9;
+    color: black;
+    box-shadow: 0 0 25px #80ffb9;
+}
+
+.typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span{
+    position: relative;
+}
+
+.typing-text span::before{
+    content: "Web Designer + Developer";
+    color: #80ffb9;
+    animation: words 20s infinite;
+}
+
+.typing-text span::after{
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+
+.container{
+    height: 50vh;
+    width: 40vw;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid white;
+    box-shadow: 0 0 25px #80ffb9;
+    border-radius: 10px;
+}
+
+.wrapper{
+    height: 50vh;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    animation: slide 16s infinite;
+    box-shadow: 0 0 24px solid #80ffb9;
+}
+
+.wrapper h1{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+.wrapper h1{
+    font-size: 20px;
+    text-align: center;
+}
+
+.wrapper .input-box{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    margin: 30px 0;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    padding: 20px 45px 20px 20px;
+}
+
+/* .wrapper .butn{
+
+} */
+
+/* BREAKPOINTS */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media(max-width: 1500px){ /*this function is for mobile view (if the website detects a max-width of 1000px, it would display the content according to what u put in here*/
+    
+    .logo{
+        text-align: center;
+        margin: 0 auto;
+        font-size: 2.5rem;
+    }
+
+    .logo, .directional-icons{
+        flex: 100%;
+    }
+   
+    .container{
+        height: auto;
+        width: 40vw;
+        position: relative;
+        overflow: hidden;
+        border: 3px solid white;
+        box-shadow: 0 0 25px #80ffb9;
+    }
+
+    .directional-icons{
+        display: inline-flex;
+    }
+
+
+    .logo{
+        align-content: center;
+        justify-content: center;
+    }
+
+    nav{
+        position: absolute;
+        /* justify-content: space-between; */
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        color: white;
+        font-weight: 500;
+        border-bottom: 3px solid transparent;
+        background-color: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        overflow: hidden;
+        transition: .3s ease;
+    }
+
+    #check:checked~nav{
+        height: auto;
+    }
+
+    nav a{
+        display: block;
+        font-size: 1.5rem;
+        padding: 1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        transition: .3s ease;
+    }
+
+    #check:checked~nav a{
+        transform: translateY(0);
+        transition-delay: calc(.15s * var(--i));
+    }
+
+
+    nav a:hover, nav a.active{
+        padding: 0.1rem auto;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #80ffb9;
+    }
+
+}
